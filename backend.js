@@ -5,7 +5,7 @@ const { PythonShell } = require('python-shell')
 //req에 데이터를 담아줍니다.
 
 app.get('',(req,res)=>{
-    res.sendFile(__dirname + '/index.html'function(err, data) {
+    res.sendFile(__dirname + '/index.html', function(err, data) {
         res.writeHead(200, {"Content-Type": "image/svg+xml"});
 })
 
