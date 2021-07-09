@@ -5,5 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.send({greeting:'hello'});
 });
-
+router.get('/metro', function(req, res) {
+  res.send({greeting:'hello'});
+});
 module.exports = router;
