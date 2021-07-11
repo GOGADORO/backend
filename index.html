@@ -1,13 +1,14 @@
-<!doctype html>
+﻿<!doctype html>
 
 <html>
 <head>
     <title>Page Title</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <script type="text/javascript" src="./js/jquery.js"></script>
-    <script type="text/javascript" src="./js/svg-pan-zoom.min.js"></script>
-    <script type="text/javascript" src="./js/thumbnailViewer.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="\$\{pageContext.request.contextPath\}$/js/jquery.js"></script>
+    <script type="text/javascript" src="\$\{pageContext.request.contextPath\}$/js/svg-pan-zoom.min.js"></script>
+    <script type="text/javascript" src="\$\{pageContext.request.contextPath\}$/js/thumbnailViewer.js"></script>
     <style>
         html, body {
             width: 100%;
@@ -79,10 +80,11 @@
             overflow: auto;
         }
     </style>
-    <script>
+    <script type="text/javascript" src="\$\{pageContext.request.contextPath\}$/js/jquery.js">
         var arrStation = [];   //배열 선언
         var obj;
         var jsonData;
+
         $(document).ready(function(){
 
         $("#sdata").click(function()
@@ -158,12 +160,10 @@
 
     </script>
 </head>
-
 <body>
     <div id="mainViewContainer" width="50%">
-        <embed id="seoulSubwayMap" type="image/svg+xml" src="Seoul_subway_linemap_ko.svg" width="100%" />
+        <embed id="seoulSubwayMap" type="image/svg+xml" src="\$\{pageContext.request.contextPath\}$Seoul_subway_linemap_ko.svg" />
     </div>
-
     <div id="thumbViewContainer">
         <svg id="scopeContainer" class="thumbViewClass">
             <g>
@@ -172,10 +172,10 @@
                 <line id="line2" stroke="red" stroke-width="2px" x1="0" y1="0" x2="0" y2="0" />
             </g>
         </svg>
-        <embed id="thumbView" type="image/svg+xml" src="Seoul_subway_linemap_ko.svg" class="thumbViewClass" />
+        <embed id="thumbView" type="image/svg+xml" src="\$\{pageContext.request.contextPath\}$Seoul_subway_linemap_ko.svg" />
     </div>
     <div><center><input type="button" value="서버 전송" id="sdata"></center></center></div>
-    <script>
+    <script type="text/javascript src="\$\{pageContext.request.contextPath\}$/js/thumbnailViewer.js">
         thumbnailViewer({mainViewId: 'seoulSubwayMap',thumbViewId: 'thumbView'});
     </script>
 </body>
