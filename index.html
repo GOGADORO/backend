@@ -175,7 +175,7 @@
         <embed id="thumbView" type="image/svg+xml" src="<%=request.getContectPath%>/Seoul_subway_linemap_ko.svg" />
     </div>
     <div><center><input type="button" value="서버 전송" id="sdata"></center></center></div>
-    <script type="text/javascript src="./js/thumbnailViewer.js">
+    <script type="text/javascript src="<%=request.getContectPath%>/js/thumbnailViewer.js">
         thumbnailViewer({mainViewId: 'seoulSubwayMap',thumbViewId: 'thumbView'});
     </script>
 </body>
