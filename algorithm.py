@@ -1,4 +1,10 @@
 import json
+import sys
+import io
+
+sys.stdin.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')
+sys.argv=sys.argv[1:]
 
 with open('stations.json', encoding='utf-8-sig')as json_file:  #Open Saved Json file to Dictionary
     stations = json.load(json_file)
@@ -49,12 +55,10 @@ def backtracking(line, station, n, time, visited = {}): #start station은 line i
     return st_list
 
 def getInput():
-    n = int(input('How many people? '))
-    station_list = []
+    n = len(sys.argv)
+    station_list = sys.argv
 
-    for i in range(n):
-        temp = input('Input departure station: ')
-        station_list.append(temp)
+
         
     return station_list, n
 
@@ -171,20 +175,20 @@ def solve(station_list, n, func):
             time = i
             continue
         else: break
-
-    print("Recommand Station: ", dest_stations)
-    print("Time Complexity: ", cnt)
+    
+    #print("Recommand Station: ", dest_stations)
+    print(json.dumps(dest_stations,ensure_ascii=False))
+    #print("Time Complexity: ", cnt)
 
 def main():
     func_list = [bruteforce, binary, hashing]
     func_name = ['Brute-Force', 'Binary-Search', 'Hashing']
     station_list, n = getInput()
-    print('==========================')
+    #print('==========================')
 
-    for i in range(3):
-        print(func_name[i])
-        solve(station_list, n, func_list[i])
-        print('==========================')
+        #print(func_name[i])
+    solve(station_list, n, func_list[2])
+        #print('==========================')
 
 if __name__ == '__main__':
     main()
