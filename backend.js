@@ -7,15 +7,17 @@ const { PythonShell } = require('python-shell')
 app.use(express.static('backend'));
 
 
+app.get('/metro',(req,res)=>{
+    res.sendFile(__dirname + '/index.html')
+})
+
 app.get("/",function(req,res){
 let options = {
   mode: 'text',
   pythonOptions: ['-u'], // get print results in real-time
   args: req.param('stations') // Python Script에 넘겨줄 인자 목록
 };
-app.get('/metro',(req,res)=>{
-    res.sendFile(__dirname + '/index.html')
-})
+
 
 
 console.log("stations :", req.param('stations'));
