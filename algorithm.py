@@ -6,11 +6,11 @@ sys.stdin.reconfigure(encoding='utf-8')
 sys.stdout.reconfigure(encoding='utf-8')
 sys.argv=sys.argv[1:]
 
-with open('stations.json', encoding='utf-8-sig')as json_file:  #Open Saved Json file to Dictionary
+with open('backend/stations.json', encoding='utf-8-sig')as json_file:  #Open Saved Json file to Dictionary
     stations = json.load(json_file)
-with open('stations_info.json', encoding='utf-8-sig')as json_file:  #Open Saved Json file to Dictionary
+with open('backend/stations_info.json', encoding='utf-8-sig')as json_file:  #Open Saved Json file to Dictionary
     stations_info = json.load(json_file)
-with open('transfer_data.json', encoding='utf-8-sig')as json_file:  #Open Saved Json file to Dictionary
+with open('backend/transfer_data.json', encoding='utf-8-sig')as json_file:  #Open Saved Json file to Dictionary
     transfer_data = json.load(json_file)
 
 def getLine(st1, st2):
