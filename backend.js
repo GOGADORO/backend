@@ -19,7 +19,7 @@ let options = {
 
 
 console.log("stations :", req.param('stations'));
-PythonShell.run('./test.py', options, function(err, msg) {
+PythonShell.run('./backend/test.py', options, function(err, msg) {
    if (err) throw err;
     console.log('results: %j', msg);
     res.json(msg);
